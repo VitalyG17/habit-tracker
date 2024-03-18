@@ -4,9 +4,72 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
+    <div class="app">
+      <div class="panel">
+        <img class="logo" src="img/logo.svg" alt="Логотип приложения" />
+        <nav class="menu">
+          <div class="menu-list">
+            <button class="menu-item menu-item-active">
+              <img src="img/hab1.svg" alt="" />
+            </button>
+            <button class="menu-item"><img src="img/hab2.svg" alt="" /></button>
+            <button class="menu-item"><img src="img/hab3.svg" alt="" /></button>
+            <button class="menu-item"><img src="img/hab4.svg" alt="" /></button>
+            <button class="menu-item"><img src="img/hab5.svg" alt="" /></button>
+            <button class="menu-item"><img src="img/hab6.svg" alt="" /></button>
+          </div>
+          <button class="menu-add">
+            <img src="img/add.svg" alt="" />
+          </button>
+        </nav>
+      </div>
+      <div class="content">
+        <header>
+          <h1>Упражнение</h1>
+          <div class="progress">
+            <div class="progress-text">
+              <div class="progress-name">Прогресс</div>
+              <div class="progress-percent">11 %</div>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-bar-cover"></div>
+            </div>
+          </div>
+        </header>
+        <main>
+          <div>
+            <div class="habbit">
+              <div class="habbit-day">День 1</div>
+              <div class="habbit-comment">Какой-то комментарий</div>
+              <button class="habbit-delete">
+                <img src="img/trash.svg" alt="Удалить день" />
+              </button>
+            </div>
+          </div>
+          <div class="habbit">
+            <div class="habbit-day">День 2</div>
+            <form class="habbit-form">
+              <input
+                class="input-icon"
+                type="text"
+                placeholder="💬 Комментарий"
+              />
+              <button class="add-comment">Готово ✅</button>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+
     <script src="scripts/app.js"></script>
   </body>
 </html>
