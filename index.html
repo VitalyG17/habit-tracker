@@ -18,14 +18,12 @@
         <img class="logo" src="img/logo.svg" alt="Логотип приложения" />
         <nav class="menu">
           <div class="menu-list">
-            <button class="menu-item menu-item-active">
-              <img src="img/hab1.svg" alt="" />
-            </button>
+            <!-- <button class="menu-item menu-item-active" menu-habbit-id = '1' ><img src="img/hab1.svg" alt="" /></button>
             <button class="menu-item"><img src="img/hab2.svg" alt="" /></button>
             <button class="menu-item"><img src="img/hab3.svg" alt="" /></button>
             <button class="menu-item"><img src="img/hab4.svg" alt="" /></button>
             <button class="menu-item"><img src="img/hab5.svg" alt="" /></button>
-            <button class="menu-item"><img src="img/hab6.svg" alt="" /></button>
+            <button class="menu-item"><img src="img/hab6.svg" alt="" /></button> -->
           </div>
           <button class="menu-add">
             <img src="img/add.svg" alt="" />
@@ -34,11 +32,11 @@
       </div>
       <div class="content">
         <header>
-          <h1>Упражнение</h1>
+          <h1 class="h1">-</h1>
           <div class="progress">
             <div class="progress-text">
               <div class="progress-name">Прогресс</div>
-              <div class="progress-percent">11 %</div>
+              <div class="progress-percent">%</div>
             </div>
             <div class="progress-bar">
               <div class="progress-bar-cover"></div>
@@ -46,24 +44,24 @@
           </div>
         </header>
         <main>
-          <div>
+          <div id="days">
             <div class="habbit">
-              <div class="habbit-day">День 1</div>
-              <div class="habbit-comment">Какой-то комментарий</div>
+              <div class="habbit-comment">-</div>
               <button class="habbit-delete">
                 <img src="img/trash.svg" alt="Удалить день" />
               </button>
             </div>
           </div>
           <div class="habbit">
-            <div class="habbit-day">День 2</div>
-            <form class="habbit-form">
+            <div class="habbit-day">День _</div>
+            <form class="habbit-form" onsubmit="addDays(event)">
               <input
+                name="comment"
                 class="input-icon"
                 type="text"
                 placeholder="💬 Комментарий"
               />
-              <button class="add-comment">Готово ✅</button>
+              <button class="add-comment" type="submit">Готово ✅</button>
             </form>
           </div>
         </main>
