@@ -219,7 +219,6 @@ input.error {
 .add-comment {
   padding: 0.4rem 2rem;
   border-radius: 8px;
-  font-weight: 500;
   text-align: center;
   border: none;
   cursor: pointer;
@@ -241,4 +240,116 @@ input.error {
   font-weight: 500;
   font-size: 16px;
   background: #fbfaff;
+}
+
+.cover {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover-hidden {
+  display: none;
+}
+
+.pop-up {
+  box-shadow: 0 8px 14px 12px rgba(56, 56, 56, 0.05);
+  background: #fff;
+  border-radius: 8px;
+  padding: 3rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.icon-lable {
+  font-size: 14px;
+  text-align: center;
+  color: #768396;
+}
+
+.icon-select {
+  display: flex;
+  gap: 1rem;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.5px solid var(--dark-blue);
+  border-radius: 14px;
+  width: 2.875rem;
+  height: 2.813rem;
+  box-shadow: 0 8px 14px 0 rgba(62, 107, 224, 0.12);
+  background: white;
+  cursor: pointer;
+}
+
+.icon-active {
+  background: var(--dark-blue);
+}
+
+.icon-active img {
+  filter: brightness(0) invert(1);
+}
+
+.icon:not(.icon-active):hover {
+  background: var(--light-blue);
+  transition: calc(var(--transition-time) - 0.3s);
+}
+
+.icon:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.pop-up-form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 1.5rem;
+  gap: 0.9rem;
+  width: 100%;
+}
+
+.pop-up-form input {
+    width: 100%;
+}
+
+.button{
+  margin-top: 0.5rem;
+  padding: 0.4rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  background: #edecfe;
+  color: var(--dark-blue);
+}
+
+.close-pop-up {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close-pop-up:hover {
+  transition: var(--transition-time);
+  filter: hue-rotate(120deg);
 }

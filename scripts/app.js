@@ -15,6 +15,9 @@ const page = {
     daysContainer: document.getElementById("days"),
     day: document.querySelector(".habbit-day"),
   },
+  popUp: {
+      popup: document.getElementById("add-habbit-popup"),
+  }
 };
 
 function loadData() {
@@ -71,7 +74,9 @@ function rerenderMainContent(activeHabbit) {
       <div class="habbit-day">День ${Number(index) + 1}</div>
       <div class="habbit-comment">${activeHabbit.days[index].comment}</div>
       <button class="habbit-delete">
-        <img src="img/trash.svg" alt="Удалить день ${index + 1}" />
+        <img src="img/trash.svg" alt="Удалить день ${
+          index + 1
+        }" onclick="deleteDay(${index})"/>
       </button>`;
     page.main.daysContainer.appendChild(element);
   }
@@ -95,6 +100,7 @@ function addDays(event) {
   form["comment"].classList.remove("error");
   if (!comment) {
     form["comment"].classList.add("error");
+    return;
   }
   habbits = habbits.map((habbit) => {
     if (habbit.id === globalAcctiveHabbitId) {
@@ -106,8 +112,31 @@ function addDays(event) {
     return habbit;
   });
   form["comment"].value = "";
-  render(globalAcctiveHabbitId)
-  saveData()
+  render(globalAcctiveHabbitId);
+  saveData();
+}
+
+function deleteDay(index) {
+  habbits = habbits.map((habbit) => {
+    if (habbit.id === globalAcctiveHabbitId) {
+      habbit.days.splice(index, 1);
+      return {
+        ...habbit,
+        days: habbit.days,
+      };
+    }
+    return habbit;
+  });
+  render(globalAcctiveHabbitId);
+  saveData();
+}
+
+function chekPopUp(){
+  if(page.popUp.popup.classList.contains('cover-hidden')) {
+    page.popUp.popup.classList.remove('cover-hidden')
+  } else {
+    page.popUp.popup.classList.add('cover-hidden')
+  }
 }
 
 (() => {
